@@ -8,16 +8,17 @@ export const generateStaticParams = () => [
   { locale: 'de' },
 ]
 
-export default function LocaleLayout({
+type Locale = 'en' | 'de'
+
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  // TIP: let Next infer the exact shape – no custom Props interface needed
-  params: { locale: 'en' | 'de' }
+  params: { locale: Locale }
 }) {
-  // ✔ destructure **inside** the function
-  const { locale } = params
+  // ✅ Await the params proxy once, then destructure
+  const { locale } = await Promise.resolve(params)
   const t = locale === 'de' ? de : en
 
   return (

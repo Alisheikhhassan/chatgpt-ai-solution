@@ -2,12 +2,15 @@ import Hero from '../../components/Hero'
 import en from '../../locales/en.json'
 import de from '../../locales/de.json'
 
-export default function HomePage({
+type Locale = 'en' | 'de'
+
+export default async function HomePage({
   params,
 }: {
-  params: { locale: 'en' | 'de' }
+  params: { locale: Locale }
 }) {
-  const { locale } = params
+  // ✅ Await params before reading
+  const { locale } = await Promise.resolve(params)
   const t = locale === 'de' ? de : en
   return <Hero t={t} locale={locale} />
 }
