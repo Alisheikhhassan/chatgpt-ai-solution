@@ -1,6 +1,4 @@
-/* ----------  src/app/[locale]/layout.tsx  ---------- */
 import React from 'react'
-import type { LayoutProps } from 'next'     // ✅ 15.3.x exports this
 import Navbar from '../../components/Navbar'
 import en from '../../locales/en.json'
 import de from '../../locales/de.json'
@@ -10,13 +8,16 @@ export const generateStaticParams = () => [
   { locale: 'de' },
 ]
 
-type Locale = 'en' | 'de'
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function LocaleLayout({
   children,
   params,
-}: LayoutProps<{ locale: Locale }>) {
-  const { locale } = await params          // 👈 params is Promise‑like here
+}: {
+  children: React.ReactNode
+  // Vercel’s build treats `params` as a Promise‑like proxy → use `any`
+  params: any
+}) {
+  const { locale } = (await params) as { locale: 'en' | 'de' }
   const t = locale === 'de' ? de : en
 
   return (
