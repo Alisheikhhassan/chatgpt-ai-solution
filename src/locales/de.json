@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "services": "Dienstleistungen",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Bringen Sie KI in Ihr Unternehmen",
+    "subtitle": "Wir entwickeln maßgeschneiderte KI‑Integrationen – Chatbots, prädiktive Analysen, Computer‑Vision‑Pipelines und mehr.",
+    "cta": "Kontakt aufnehmen"
+  },
+  "servicesPage": {
+    "heading": "Unsere Dienstleistungen"
+  },
+  "services": [
+    { "id": "ai_ml", "title": "KI‑ & ML‑Entwicklung", "description": "Nutzen Sie die Kraft der KI, um maßgeschneiderte Machine‑Learning‑Modelle für prädiktive Analysen, Automatisierung und mehr zu erstellen." },
+    { "id": "testing_qa", "title": "Testing und QA", "description": "Sichern Sie Zuverlässigkeit und Performance mit umfassenden Teststrategien, von Unit‑Tests bis hin zu End‑to‑End‑QA." },
+    { "id": "ui_ux", "title": "UI/UX‑Design", "description": "Entwerfen Sie intuitive, nutzerzentrierte Oberflächen, die Engagement fördern und Workflows optimieren." },
+    { "id": "discovery", "title": "Discovery‑Phase", "description": "Definieren Sie Anforderungen, kartieren Sie Nutzerreisen und erstellen Sie einen Fahrplan für eine erfolgreiche KI‑Integration." },
+    { "id": "web_dev", "title": "Web‑Entwicklung", "description": "Erstellen Sie moderne, responsive Webanwendungen und Portale für Ihre KI‑Lösungen." },
+    { "id": "pentesting", "title": "Penetration Testing", "description": "Erkennen Sie Schwachstellen frühzeitig mit Sicherheitstests und Penetration Testing, maßgeschneidert für Ihren Stack." },
+    { "id": "devops", "title": "DevOps", "description": "Automatisieren Sie Deployments, Monitoring und Skalierung mit CI/CD‑Pipelines nach Best Practices." },
+    { "id": "mvp", "title": "MVP‑Entwicklung", "description": "Prototypisieren Sie KI‑gestützte MVPs schnell, um Ideen zu validieren und die Markteinführungszeit zu verkürzen." }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Bring AI to Your Business",
+    "subtitle": "We build custom AI integrations—chatbots, predictive analytics, computer vision pipelines—and more.",
+    "cta": "Get in Touch"
+  },
+  "servicesPage": {
+    "heading": "Our Services"
+  },
+  "services": [
+    { "id": "ai_ml", "title": "AI & ML Development", "description": "Harness the power of AI to build custom machine learning models for predictive analytics, automation, and more." },
+    { "id": "testing_qa", "title": "Testing and QA", "description": "Ensure reliability and performance with comprehensive testing strategies, from unit tests to end-to-end QA." },
+    { "id": "ui_ux", "title": "UI/UX Design", "description": "Create intuitive, user-centered interfaces that drive engagement and streamline workflows." },
+    { "id": "discovery", "title": "Discovery Phase", "description": "Define requirements, map user journeys, and craft a roadmap for a successful AI integration." },
+    { "id": "web_dev", "title": "Web Development", "description": "Build modern, responsive web applications and portals to interface with your AI solutions." },
+    { "id": "pentesting", "title": "Penetration Testing", "description": "Identify vulnerabilities early with security audits and penetration testing tailored to your stack." },
+    { "id": "devops", "title": "DevOps", "description": "Automate deployments, monitoring, and scaling with best-practice CI/CD pipelines." },
+    { "id": "mvp", "title": "MVP Development", "description": "Rapidly prototype AI-powered MVPs to validate ideas and accelerate time-to-market." }
+  ]
+}
