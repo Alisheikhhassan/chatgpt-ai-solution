@@ -1,4 +1,6 @@
+/* ----------  src/app/[locale]/layout.tsx  ---------- */
 import React from 'react'
+import type { LayoutProps } from 'next'     // ✅ 15.3.x exports this
 import Navbar from '../../components/Navbar'
 import en from '../../locales/en.json'
 import de from '../../locales/de.json'
@@ -13,12 +15,8 @@ type Locale = 'en' | 'de'
 export default async function LocaleLayout({
   children,
   params,
-}: {
-  children: React.ReactNode
-  params: { locale: Locale }
-}) {
-  // ✅ Await the params proxy once, then destructure
-  const { locale } = await Promise.resolve(params)
+}: LayoutProps<{ locale: Locale }>) {
+  const { locale } = await params          // 👈 params is Promise‑like here
   const t = locale === 'de' ? de : en
 
   return (
