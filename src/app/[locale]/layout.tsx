@@ -1,21 +1,23 @@
-// src/app/[locale]/layout.tsx
+import React from 'react'
 import Navbar from '../../components/Navbar'
 import en from '../../locales/en.json'
 import de from '../../locales/de.json'
 
-export const generateStaticParams = () => [{ locale: 'en' }, { locale: 'de' }]
+export const generateStaticParams = () => [
+  { locale: 'en' },
+  { locale: 'de' },
+]
 
-type Locale = 'en' | 'de'
-interface Params { locale: Locale }
-
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  params: Params           // <-- no “any”
+  // TIP: let Next infer the exact shape – no custom Props interface needed
+  params: { locale: 'en' | 'de' }
 }) {
-  const { locale } = await Promise.resolve(params) // satisfy Next 15
+  // ✔ destructure **inside** the function
+  const { locale } = params
   const t = locale === 'de' ? de : en
 
   return (
