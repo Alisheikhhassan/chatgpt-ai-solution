@@ -5,15 +5,17 @@ import de from '../../locales/de.json'
 
 export const generateStaticParams = () => [{ locale: 'en' }, { locale: 'de' }]
 
+type Locale = 'en' | 'de'
+interface Params { locale: Locale }
+
 export default async function LocaleLayout({
   children,
-  params,                       // <- don’t annotate params
+  params,
 }: {
   children: React.ReactNode
-  params: any                   // (or remove this line entirely)
+  params: Params           // <-- no “any”
 }) {
-  const { locale } = await params as { locale: 'en' | 'de' }
-
+  const { locale } = await Promise.resolve(params) // satisfy Next 15
   const t = locale === 'de' ? de : en
 
   return (

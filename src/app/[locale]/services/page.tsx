@@ -3,10 +3,14 @@ import ServiceCard from '../../../components/ServiceCard'
 import en from '../../../locales/en.json'
 import de from '../../../locales/de.json'
 
-export default async function ServicesPage({ params }: { params: any }) {
-  const { locale } = await params as { locale: 'en' | 'de' }
-  const t = locale === 'de' ? de : en
 
+// src/app/[locale]/services/page.tsx
+type Locale = 'en' | 'de'
+interface Params { locale: Locale }
+
+export default async function ServicesPage({ params }: { params: Params }) {
+  const { locale } = await Promise.resolve(params)
+  const t = locale === 'de' ? de : en
   return (
     <section className="container mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold mb-8">{t.servicesPage.heading}</h2>
