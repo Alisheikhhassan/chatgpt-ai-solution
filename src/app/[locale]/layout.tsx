@@ -1,23 +1,17 @@
-// src/app/[locale]/layout.tsx
-import '../globals.css'
+import React from 'react'
 import Navbar from '../../components/Navbar'
 import en from '../../locales/en.json'
 import de from '../../locales/de.json'
 
-export const generateStaticParams = () => [
-  { locale: 'en' },
-  { locale: 'de' },
-]
+export const generateStaticParams = () => [{ locale: 'en' }, { locale: 'de' }]
 
-export default function LocaleLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode
-  params: { locale: 'en' | 'de' }
-}) {
-  const { locale } = params
-  const t = locale === 'de' ? de : en
+type Locales = 'en' | 'de'
+type Props = { children: React.ReactNode; params: { locale: Locales } }
+
+export default async function LocaleLayout({ children, ...props }: Props) {
+  const { locale } = await props.params
+  const translations: Record<Locales, typeof en> = { en, de }
+  const t = translations[locale]
 
   return (
     <html lang={locale}>
