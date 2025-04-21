@@ -1,15 +1,10 @@
-import React from 'react'
+// src/app/[locale]/page.tsx
 import Hero from '../../components/Hero'
 import en from '../../locales/en.json'
 import de from '../../locales/de.json'
 
-type Locales = 'en' | 'de'
-type Props = { params: { locale: Locales } }
-
-export default async function HomePage(props: Props) {
-  const { locale } = await props.params
-  const translations: Record<Locales, typeof en> = { en, de }
-  const t = translations[locale]
-
+export default async function HomePage({ params }: { params: any }) {
+  const { locale } = await params as { locale: 'en' | 'de' }
+  const t = locale === 'de' ? de : en
   return <Hero t={t} locale={locale} />
 }
