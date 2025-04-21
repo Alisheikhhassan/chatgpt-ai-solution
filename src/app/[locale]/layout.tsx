@@ -10,15 +10,15 @@ export const generateStaticParams = () => [
 
 type Locale = 'en' | 'de'
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
   params: { locale: Locale }
 }) {
-  // 👉 destructure **inside** – avoids the Next 15 warning
-  const { locale } = params
+  // ✅ Await the params proxy once, then destructure
+  const { locale } = await Promise.resolve(params)
   const t = locale === 'de' ? de : en
 
   return (
