@@ -2,7 +2,7 @@
 import Link from 'next/link'
 
 type Props = {
-  t: typeof import('../locals/en.json')
+  t: typeof import('../locales/en.json')
   locale: 'en' | 'de'
 }
 
