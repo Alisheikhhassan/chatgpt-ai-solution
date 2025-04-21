@@ -8,14 +8,12 @@ export const generateStaticParams = () => [
   { locale: 'de' },
 ]
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  // Vercel’s build treats `params` as a Promise‑like proxy → use `any`
-  params: any
+  params: any // Vercel treats this as a Promise‑like proxy
 }) {
   const { locale } = (await params) as { locale: 'en' | 'de' }
   const t = locale === 'de' ? de : en

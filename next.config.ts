@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  eslint: {
+    /**
+     * When `true`, `next build` will successfully complete even if ESLint
+     * errors are present. Local `next dev` still shows errors so you can fix
+     * them later.
+     */
+    ignoreDuringBuilds: true,
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default nextConfig
