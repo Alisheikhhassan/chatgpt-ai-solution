@@ -8,15 +8,16 @@ export const generateStaticParams = () => [
   { locale: 'de' },
 ]
 
+type Locale = 'en' | 'de'
+
 export default function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  // TIP: let Next infer the exact shape – no custom Props interface needed
-  params: { locale: 'en' | 'de' }
+  params: { locale: Locale }
 }) {
-  // ✔ destructure **inside** the function
+  // 👉 destructure **inside** – avoids the Next 15 warning
   const { locale } = params
   const t = locale === 'de' ? de : en
 

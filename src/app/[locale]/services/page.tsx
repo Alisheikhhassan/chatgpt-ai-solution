@@ -2,10 +2,12 @@ import ServiceCard from '../../../components/ServiceCard'
 import en from '../../../locales/en.json'
 import de from '../../../locales/de.json'
 
+type Locale = 'en' | 'de'
+
 export default function ServicesPage({
   params,
 }: {
-  params: { locale: 'en' | 'de' }
+  params: { locale: Locale }
 }) {
   const { locale } = params
   const t = locale === 'de' ? de : en
