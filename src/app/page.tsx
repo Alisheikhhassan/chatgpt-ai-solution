@@ -1,11 +1,6 @@
 // src/app/page.tsx
-import Hero from '../components/Hero'
+import { redirect } from 'next/navigation'
 
-export default function HomePage() {
-  return (
-    <div className="container mx-auto px-4 py-12">
-      <Hero />
-      {/* Later: <Services />, <Portfolio />, <BlogList />, <ContactForm /> */}
-    </div>
-  )
+export default function IndexPage() {
+  redirect('/en')
 }

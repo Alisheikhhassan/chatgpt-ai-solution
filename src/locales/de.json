@@ -1,0 +1,14 @@
+{
+    "nav": {
+      "services": "Dienstleistungen",
+      "portfolio": "Portfolio",
+      "blog": "Blog",
+      "contact": "Kontakt"
+    },
+    "hero": {
+      "title": "Bringen Sie KI in Ihr Unternehmen",
+      "subtitle": "Wir entwickeln maßgeschneiderte KI‑Integrationen – Chatbots, prädiktive Analysen, Computer‑Vision‑Pipelines und mehr.",
+      "cta": "Kontakt aufnehmen"
+    }
+  }
+  

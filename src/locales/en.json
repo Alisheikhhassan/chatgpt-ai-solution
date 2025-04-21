@@ -1,0 +1,14 @@
+{
+    "nav": {
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Bring AI to Your Business",
+      "subtitle": "We build custom AI integrations—chatbots, predictive analytics, computer vision pipelines—and more.",
+      "cta": "Get in Touch"
+    }
+  }
+  
