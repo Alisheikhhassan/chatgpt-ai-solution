@@ -2,12 +2,9 @@ import ServiceCard from '../../../components/ServiceCard'
 import en from '../../../locales/en.json'
 import de from '../../../locales/de.json'
 
-import type { Locale } from '../page'  // reuse Locale type
-
-type Params = { locale: Locale }
-
-export default async function ServicesPage({ params }: { params: Params }) {
-  const { locale } = await params
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function ServicesPage({ params }: { params: any }) {
+  const { locale } = (await params) as { locale: 'en' | 'de' }
   const t = locale === 'de' ? de : en
 
   return (
